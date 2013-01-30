@@ -1,0 +1,26 @@
+data:text/html,
+<html>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>Browser Note</title>
+<style>
+  button{
+  	width:100px;
+  	height: 30px;
+  	font-size: 16px;
+  }
+  #note{
+  	margin-top: 10px;
+    padding: 10px;
+    border: solid 1px;
+    height: 100px;
+  }
+</style>
+<script>
+  function mail(){
+  	var body=encodeURI(document.getElementById('note').innerText);
+  	document.location.href="mailto:?subject="+Date()+"&body="+body;
+  }
+</script>
+<button onclick="mail()">Send</button>
+<div id="note" contenteditable=true></div>
+</html>
